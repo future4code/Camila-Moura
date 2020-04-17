@@ -1,0 +1,62 @@
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25%;
+    width: 25%;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #b887a6;
+    position: fixed;
+    width: 100%;
+}
+
+#opc {
+    float: left;
+}
+
+#men {
+    display: block;
+    color: white;
+    text-align: right;
+    padding: 20px;
+    text-decoration: none;
+    font-family: verdana;
+    font-size: 90%;
+}
+
+#men:hover {
+    background-color: #a5678d;
+}
+
+#slogan {
+    color: #676767;
+    font-family: verdana;
+    text-align: center;
+    font-size: 125%;
+}
+
+#bot {
+    color: white;
+    font-family: verdana;
+    font-size: 85%; 
+    text-decoration: none;
+
+}
+
+.rod {
+    list-style-type: none;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #676767;
+    text-align: left;
+  }
