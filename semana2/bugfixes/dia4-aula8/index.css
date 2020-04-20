@@ -26,15 +26,11 @@ button:focus {
 }
 
 img {
-    width: 100px;
+    width: 60px;
 }
 
 div>p:first-child {
     display: inline;
-}
-
-div img {
-    background: black;
 }
 
 .botao-amarelo {
@@ -56,6 +52,7 @@ div img {
 
 .icone {
     height: 15px;
+    width: 15px;
 }
 
 
@@ -114,11 +111,6 @@ td button {
 .container-do-search {
     margin-top: 20px;
     height: 100px;
-}
-
-img {
-    width: 60px;
-    height: 60px;
 }
 
 #back-button {
