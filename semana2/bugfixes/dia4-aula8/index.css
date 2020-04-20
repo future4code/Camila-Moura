@@ -43,6 +43,7 @@ div>p:first-child {
     font-size: 20px;
     color: white;
     font-family: Roboto;
+    margin-top: 50px;
 }
 
 .botao-amarelo:hover {
@@ -52,6 +53,7 @@ div>p:first-child {
 .container {
     text-align: center;
     font-family: Roboto;
+    margin: auto;
 }
 
 .icone {
@@ -82,6 +84,8 @@ div>p:first-child {
 #container-para-comprar {
     background-color: #e7eb90;
     font-family: Roboto;
+    padding-top: 90px;
+    padding-bottom: 100px;
 }
 
 #container-para-comprar>p {
@@ -135,6 +139,10 @@ td button:hover {
     height: 100px;
 }
 
+.botvoltar {
+    position: relative;
+}
+
 #back-button {
     background-color: white;
     width: 100px;
@@ -144,6 +152,13 @@ td button:hover {
     font-size: 10px;
     color: black;
     font-family: Roboto;
+    margin-top: 90px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    top: 30%;
+    left: 47%;
+    position: absolute;
 }
 
 #back-button:hover {
