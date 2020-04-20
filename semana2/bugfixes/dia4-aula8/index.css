@@ -95,6 +95,13 @@ div:last-child {
     text-align: center;
 }
 
+input[type=text] {
+    border-bottom: 1.5px solid #636363;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
 table {
     width: 60%;
     text-align: center;
