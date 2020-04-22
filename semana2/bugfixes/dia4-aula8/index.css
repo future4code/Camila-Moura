@@ -1,0 +1,166 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    background-color: #fe7e02;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    text-align: center;
+    font-family: Roboto;
+}
+
+input {
+    height: 20px;
+    width: 500px;
+    font-family: Roboto;
+}
+
+button:focus {
+    color: white;
+}
+
+img {
+    width: 60px;
+}
+
+div>p:first-child {
+    display: inline;
+}
+
+.botao-amarelo {
+    background-color: #ffaf43;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    font-family: Roboto;
+    margin-top: 50px;
+}
+
+.botao-amarelo:hover {
+    background-color: #c44f00;
+}
+
+.container {
+    text-align: center;
+    font-family: Roboto;
+    margin: auto;
+}
+
+.icone {
+    height: 15px;
+    width: 15px;
+}
+
+
+/** 
+  *
+  *  ESTILOS HOME 
+  *
+  **/
+
+#container-de-descricao {
+    background-color: #2274a5;
+    color: white;
+    padding-top: 120px;
+    padding-bottom: 175px;
+    font-family: Roboto;
+}
+
+#container-de-descricao>ol {
+    padding: 15px 0px;
+    font-family: Roboto;
+}
+
+#container-para-comprar {
+    background-color: #e7eb90;
+    font-family: Roboto;
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+#container-para-comprar>p {
+    color: #c44f00;
+    padding: 100px 0;
+    font-size: 60px;
+    font-family: Roboto;
+}
+
+
+/**
+  *
+  *  ESTILOS COMPRAR 
+  *
+  **/
+
+div:nth-child(2),
+div:last-child {
+    text-align: center;
+}
+
+input[type=text] {
+    border-bottom: 1.5px solid #636363;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+table {
+    width: 60%;
+    text-align: center;
+    font-family: Roboto;
+    margin: auto;
+}
+
+td button {
+    background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    font-family: Roboto;
+    border-radius: 5px;
+    color: black;
+}
+
+td button:hover {
+    background-color: #c44f00;
+}
+
+.container-do-search {
+    margin-top: 20px;
+    height: 100px;
+}
+
+.botvoltar {
+    position: relative;
+}
+
+#back-button {
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: black;
+    font-family: Roboto;
+    margin-top: 90px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    top: 30%;
+    left: 47%;
+    position: absolute;
+}
+
+#back-button:hover {
+    background-color: #635a3d
+}
