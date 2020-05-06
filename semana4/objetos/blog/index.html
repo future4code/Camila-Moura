@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head rel=”stylesheet” type=”text/css” href=”index.css”></head>
+    <script src="index.js" defer></script>
+    <title>Blog</title>
+</head>
+<body>
+    <form>
+        <label for=”titulo”>Título do post</label>
+        <input type=”text” id=”titulo”>
+        <label for="autor">Autor do post</label>
+        <input type=”text” id="autor">
+        <textarea id="conteudo" placeholder="Escreva o conteúdo do post aqui!"></textarea>
+        <button onclick="criarPost(event)">Criar post</button>
+    </form>
+
+    <div id="feedDePosts">
+
+    </div>
+</body>
+</html>
