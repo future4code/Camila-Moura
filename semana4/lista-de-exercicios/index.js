@@ -46,3 +46,15 @@ b) true
 c) true
 d) true
 e) true */
+
+/*3. Não, o código não funciona. Falta uma definição para a variável quantidadeDeNumerosPares. Também falta uma 
+maneira de identificar quais números são pares. Segue código abaixo corrigido:*/
+
+let quantidadeDeNumerosPares = 7
+let i = -1
+while(i < quantidadeDeNumerosPares) {
+  i++
+  if (i % 2 === 0) {
+    console.log(i)
+    }
+}
