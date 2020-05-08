@@ -39,3 +39,10 @@ function triplicar (numero, index, array) {
 
 let arrayTri = arrayEx1.map(triplicar)
 console.log(arrayTri) 
+
+/*2.
+a) false
+b) true
+c) true
+d) true
+e) true */
