@@ -18,3 +18,9 @@ Quantidade total de números, 14
 6
 8*/
 
+/* 4. Há um array de números e duas variáveis. O for percorrerá o array e mudará o valor das variáveis de acordo com
+a condição do if. A variável numero1 será alterada conforme o elemento do array seja menor que o valor de numero1. 
+Ou seja, no final, o valor de numero1 será o menor número do array. A variável numero2 faz o contrário e seu valor final
+será o maior número do array. Valores no console seriam: 
+-10
+1590 */
