@@ -67,3 +67,21 @@ function triangulo(a, b, c) {
         return "Triângulo escaleno"
     }
 }
+
+/* 5 */
+
+function exCinco (a, b) {
+    if (a > b)  {
+        console.log(a)
+        let diferenca1 = a - b
+        console.log(`A diferença é ${diferenca1}`)
+    } else {
+        console.log(b)
+        let diferenca2 = b - a 
+        console.log(`A diferença é ${diferenca2}`)
+    }
+
+    if ((a % b === 0) || (b % a === 0)) {
+        console.log("Os números são divisíveis!")
+    }
+}
