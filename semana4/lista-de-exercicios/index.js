@@ -47,14 +47,23 @@ c) true
 d) true
 e) true */
 
-/*3. Não, o código não funciona. Falta uma definição para a variável quantidadeDeNumerosPares. Também falta uma 
-maneira de identificar quais números são pares. Segue código abaixo corrigido:*/
+/*3. Não, o código não funciona. Os dados também levam um loop infinito por falta de incremento. 
+Segue código abaixo corrigido:*/
 
-let quantidadeDeNumerosPares = 7
-let i = -1
+const quantidadeDeNumerosPares
+let i = 0
 while(i < quantidadeDeNumerosPares) {
-  i++
-  if (i % 2 === 0) {
-    console.log(i)
+    console.log(i*2)
+    i++
+}
+
+/* 4 */
+function triangulo(a, b, c) {
+    if (a === b && c === b) {
+        return "Triângulo equilátero"
+    } else if (a === b || a === c || b === c){
+        return "Triângulo isósceles"
+    } else if (a !== b && b !== c) {
+        return "Triângulo escaleno"
     }
 }
