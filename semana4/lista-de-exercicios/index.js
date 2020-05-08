@@ -24,3 +24,18 @@ Ou seja, no final, o valor de numero1 será o menor número do array. A variáve
 será o maior número do array. Valores no console seriam: 
 -10
 1590 */
+
+
+// LÓGICA DA PROGRAMAÇÃO 
+/* 1. É possível percorrer um array com callbacks, como forEach(), map() e filter(). O forEach() irá iterar sobre os
+itens do array, para utilizá-las. O map cria um novo array do mesmo tamanho do original. Já o filter() cria um novo 
+array filtrando informações do original. No exemplo abaixo, é usado map() para triplicar os valores do array original.*/
+
+let arrayEx1 = [10, 90, 68, 47, 13, 50]
+
+function triplicar (numero, index, array) {
+    return numero * 3;
+}
+
+let arrayTri = arrayEx1.map(triplicar)
+console.log(arrayTri) 
