@@ -10,3 +10,11 @@
  O return da função é a variável (ou seja, o valor multiplicado pelo investimento). Depois, a função é chamada
  duas vezes, com diferentes parâmetros. As chamadas da função são impresas no console. No console, apareceram os 
  números 165 (novoMontante) e no caso da segunda chamada, aparecerá o alert.*/
+
+/* 3. São colocados três arrays, o primeiros com vários elementos e os outros dois vazios. O for percorre o primeiro
+array e o if seleciona os números pares (cuja divisão por dois é igual a zero) para o array1 e os outros números para 
+o array2. O console.log imprimirá o tamanho de cada um dos arrays, ou seja:
+Quantidade total de números, 14
+6
+8*/
+
