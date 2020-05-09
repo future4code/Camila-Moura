@@ -144,3 +144,19 @@ let melhorFilme = {
 }
 
 console.log(`Venha assistir ao filme ${melhorFilme.titulo}, de ${melhorFilme.ano}, dirigido por ${melhorFilme.diretor} e dublado por ${melhorFilme.dubladores}`)
+
+/* 4 */
+ let pessoa = {
+     nome: "João Simões",
+     idade: 20,
+     email: "joao.simoes@gmail.com",
+     endereco: "Rua Amsterdã, 108, Pouso Alegre"
+ }
+
+ function anonimizarPessoa () {
+     let anonimo = {
+        ...pessoa 
+        nome: ""
+     }
+    return anonimo
+ } 
