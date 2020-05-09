@@ -189,3 +189,14 @@ const adolescentes = pessoas.filter((adolescente, index, array) => {
 })
 
 console.log(adolescentes)
+
+/* 2 */
+const arrayEx2 = [1, 2, 3, 4, 5, 6]
+
+const multiplicadoPor2 = arrayEx2.map((numero, index, array) => {
+    return numero * 2
+})
+
+const multiplicadoPor3 = arrayEx2.map((numero, index, array) => {
+    return numero * 3
+})
