@@ -122,3 +122,13 @@ const ola = alerta
 dados mais complexos, com propriedades que podem acessadas posteriormente. Um array pode ser feito de vários
 objetos, se necessário. */
 
+/* 2 */
+
+function criaRetangulo (lado1, lado2) {
+    let dadosRetangulo = {
+        altura: lado1,
+        largura: lado2, 
+        perimetro: 2 * (lado1 + lado2),
+        area: lado1 * lado2
+    }
+}
