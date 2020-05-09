@@ -72,16 +72,27 @@ function triangulo(a, b, c) {
 
 function exCinco (a, b) {
     if (a > b)  {
-        console.log(a)
+        console.log(`O maior é: ${a}`)
+        if (b % a !== 0) {
+            console.log(`${b} não é divisível por ${a}`)
+        } 
+        if (a % b === 0) {
+            console.log(`${a} é divisível por ${b}`)
+        }
         let diferenca1 = a - b
-        console.log(`A diferença é ${diferenca1}`)
-    } else {
-        console.log(b)
-        let diferenca2 = b - a 
-        console.log(`A diferença é ${diferenca2}`)
-    }
+        console.log(`A diferença entre eles é ${diferenca1}`)
 
-    if ((a % b === 0) || (b % a === 0)) {
-        console.log("Os números são divisíveis!")
+    } else if (b > a) {
+        console.log(`O maior é: ${b}`)
+        if (a % b !== 0) {
+            console.log(`${a} não é divisível por ${b}`)
+        } 
+        if (b % a === 0) {
+            console.log(`${b} é divisível por ${a}`)
+        }
+        let diferenca2 = b - a
+        console.log(`A diferença entre eles é ${diferenca2}`)
     }
 }
+
+exCinco (15, 30) 
