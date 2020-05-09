@@ -96,3 +96,14 @@ function exCinco (a, b) {
 }
 
 exCinco (15, 30) 
+
+/* FUNÇÕES */
+
+/* 1 */
+
+/* 2 */
+let alerta = () => {
+    return alert("Hello Labenu");
+}
+
+const ola = alerta
