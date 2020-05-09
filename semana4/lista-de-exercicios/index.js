@@ -200,3 +200,31 @@ const multiplicadoPor2 = arrayEx2.map((numero, index, array) => {
 const multiplicadoPor3 = arrayEx2.map((numero, index, array) => {
     return numero * 3
 })
+
+/* 3 */
+const parque = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+const podemEntrar = parque.filter((autorizado, index, array) => {
+    if ((autorizado.altura >= 1.5) && (autorizado.idade >= 14) && (autorizado.idade <= 60)) {
+        return true
+    }
+    return false 
+})
+
+console.log(podemEntrar)
+
+const proibidoEntrar = parque.filter((proibido, index, array) => {
+    if ((proibido.altura < 1.5) || (proibido.idade < 14) || (proibido.idade > 60)) {
+        return true
+    }
+    return false 
+})
+
+console.log(proibidoEntrar)
