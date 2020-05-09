@@ -115,3 +115,10 @@ let alerta = () => {
 }
 
 const ola = alerta
+
+/* OBJETOS */
+
+/* 1 - Os arrays são maneiras de guardar mais de uma informação ao mesmo tempo. Já o objeto permite guardar
+dados mais complexos, com propriedades que podem acessadas posteriormente. Um array pode ser feito de vários
+objetos, se necessário. */
+
