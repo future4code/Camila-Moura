@@ -156,7 +156,36 @@ console.log(`Venha assistir ao filme ${melhorFilme.titulo}, de ${melhorFilme.ano
  function anonimizarPessoa () {
      let anonimo = {
         ...pessoa 
-        nome: ""
+        nome: "Anônimo"
      }
     return anonimo
  } 
+
+/* FUNÇÕES DE ARRAY */
+
+/* 1 */
+
+let pessoas = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+const adultos = pessoas.filter((adulto, index, array) => {
+    if (adulto.idade >= 20) {
+        return true
+    }
+    return false 
+})
+
+console.log(adultos)
+
+const adolescentes = pessoas.filter((adolescente, index, array) => {
+    if (adolescente.idade < 20) {
+        return true
+    }
+    return false 
+})
+
+console.log(adolescentes)
