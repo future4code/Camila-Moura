@@ -100,7 +100,15 @@ exCinco (15, 30)
 /* FUNÇÕES */
 
 /* 1 */
+let arrayExFuncoes = [10, 90, 54, 37, 88, 25, 62, 13, 77]
 
+function segundoNumero () {
+    arrayExFuncoes.sort(function(a, b) {return a - b})
+    return console.log(arrayExFuncoes[1], arrayExFuncoes[7])
+}
+
+segundoNumero()
+ 
 /* 2 */
 let alerta = () => {
     return alert("Hello Labenu");
