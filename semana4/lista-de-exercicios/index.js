@@ -131,4 +131,16 @@ function criaRetangulo (lado1, lado2) {
         perimetro: 2 * (lado1 + lado2),
         area: lado1 * lado2
     }
+    return dadosRetangulo
 }
+
+/* 3 */
+
+let melhorFilme = {
+    titulo: "Toy Story 3",
+    ano: "2010",
+    diretor: "Lee Unkrich",
+    dubladores: "Marco Ribeiro, Guilherme Briggs, Mabel Cezar"
+}
+
+console.log(`Venha assistir ao filme ${melhorFilme.titulo}, de ${melhorFilme.ano}, dirigido por ${melhorFilme.diretor} e dublado por ${melhorFilme.dubladores}`)
