@@ -155,7 +155,7 @@ console.log(`Venha assistir ao filme ${melhorFilme.titulo}, de ${melhorFilme.ano
 
  function anonimizarPessoa () {
      let anonimo = {
-        ...pessoa 
+        ...pessoa,
         nome: "Anônimo"
      }
     return anonimo
@@ -201,6 +201,14 @@ const multiplicadoPor3 = arrayEx2.map((numero, index, array) => {
     return numero * 3
 })
 
+const parImpar = arrayEx2.map((numero, index, array) => {
+    if (numero % 2 === 0) {
+       return `${numero} é par` 
+    } else if(numero % 2 !== 0) {
+        return `${numero} é ímpar`
+    }
+})
+
 /* 3 */
 const parque = [
 	{ nome: "Paula", idade: 12, altura: 1.8},
@@ -227,4 +235,3 @@ const proibidoEntrar = parque.filter((proibido, index, array) => {
     return false 
 })
 
-console.log(proibidoEntrar)
