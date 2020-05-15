@@ -7,10 +7,18 @@ import photo1 from './img/photo1.jpg';
 import icon2 from './img/icon2.jpg';
 import photo2 from './img/photo2.jpg';
 
+const FormNovoPost = styled.input`
+  display: block;
+  border: 1px double black;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  width: 300px;
+`
+const Botao = styled.button`
+  margin-bottom: 5px;
+`
 
 class App extends React.Component {
-
-  
   state = {
     posts: [
       {
@@ -31,6 +39,7 @@ class App extends React.Component {
         fotoPost: photo2
       }
     ],
+
     valorInputNome: "",
     valorInputIcon: "",
     valorInputPost: ""
@@ -64,9 +73,11 @@ class App extends React.Component {
     const listaPosts = this.state.posts.map(post => {
       return (
       <div>
-        <p>{post.nomeUsuario}</p>
-        <p>{post.fotoUsuario}</p>
-        <p>{post.fotoPost}</p>
+        <Post
+          nomeUsuario={post.nomeUsuario}
+          fotoUsuario={post.fotoUsuario}
+          fotoPost={post.fotoPost}
+        />
       </div>
       );
     });
@@ -74,23 +85,24 @@ class App extends React.Component {
     return (
       <div className={'app-container'}>
         <div>
-        <input
+        <FormNovoPost
             value={this.state.valorInputNome}
             onChange={this.onChangeInputNome}
             placeholder={"Username"}
-          />
-        <input
+        />
+        <FormNovoPost
             value={this.state.valorInputIcon}
             onChange={this.onChangeInputIcon}
             placeholder={"Foto do usuário"}
           />
-        <input
+        <FormNovoPost
             value={this.state.valorInputPost}
             onChange={this.onChangeInputPost}
-            placeholder={"Foto do usuário"}
+            placeholder={"Post"}
           />
-        <button onClick={this.adicionaPost}>Postar foto!</button>
+        <Botao onClick={this.adicionaPost}>Postar foto!</Botao>
         </div>
+
        <div>{listaPosts}</div>
       </div>
     );
