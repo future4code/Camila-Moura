@@ -18,7 +18,7 @@ function HomePage() {
       <HomeLogo src={logo} alt={"Logo LabX"} />
       <div>
         <HomeButton onClick={goToApplicationForm}>
-          Se inscreva nas viagens disponíveis!
+          Viagens disponíveis
         </HomeButton>
         <HomeButton onClick={goToLoginPage}>Fazer login</HomeButton>
       </div>
