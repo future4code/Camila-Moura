@@ -47,6 +47,24 @@ export const Logout = styled(HeaderFirstButton)`
   left: 85vw;
 `;
 
+// Conteúdo compartilhado
+
+export const ContentContainer = styled.div`
+  width: 90vw;
+  height: 70vh;
+  position: absolute;
+  left: 5vw;
+  top: 25vh;
+`;
+
+export const Title = styled.h1`
+  position: absolute;
+  top: 10vh;
+  left: 40vw;
+  text-align: center;
+  color: #ee524c;
+`;
+
 // HomePage
 
 export const HomeContainer = styled.div`
@@ -125,19 +143,6 @@ export const LoginButton = styled(HomeButton)`
 
 //ListTripsPage
 
-export const TripsContainer = styled.div`
-  width: 90vw;
-  position: absolute;
-  left: 5vw;
-  top: 10vh;
-`;
-
-export const Title = styled.h1`
-  text-align: center;
-  color: #ee524c;
-  margin-bottom: 45px;
-`;
-
 export const TripsList = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -158,4 +163,52 @@ export const TripTitle = styled.p`
   font-weight: bold;
   font-size: 18px;
   text-align: center;
+`;
+
+// CreateTripsPage
+
+export const CreateTripContainer = styled(LoginContainer)`
+  left: 18%;
+  top: 5%;
+  width: 60%;
+  height: 70%;
+
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+
+export const CreateTripForm = styled.form`
+  margin: 40px 20px;
+`;
+
+export const CreateTripInput = styled(LoginInput)`
+  display: block;
+  width: 20vw;
+  height: 5vh;
+`;
+
+export const FormDiv = styled.div`
+  position: absolute;
+  left: 45%;
+  top: 11%;
+`;
+
+export const PlanetSelect = styled.select`
+  display: block;
+  width: 20vw;
+  height: 5vh;
+
+  margin: 10px 0px 30px 0px;
+
+  border: 2px solid #e3e3e3;
+  border-radius: 16px;
+`;
+
+export const DescriptionInput = styled(CreateTripInput)`
+  height: 9vh;
+`;
+
+export const CreateTripButton = styled(LoginButton)`
+  margin: 0px auto;
+  height: 5vh;
 `;

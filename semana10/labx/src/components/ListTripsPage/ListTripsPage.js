@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useProtectedPage } from "./../../useProtectedPage";
 import {
   Header,
-  TripsContainer,
+  ContentContainer,
   Title,
   TripsList,
   TripBox,
@@ -55,8 +55,9 @@ function ListTripsPage() {
         </HeaderSecondButton>
         <Logout>Logout</Logout>
       </Header>
-      <TripsContainer>
-        <Title>Lista de Viagens</Title>
+      <Title>Lista de Viagens</Title>
+
+      <ContentContainer>
         <TripsList>
           {listTrips.map((trip) => {
             return (
@@ -71,7 +72,7 @@ function ListTripsPage() {
             );
           })}
         </TripsList>
-      </TripsContainer>
+      </ContentContainer>
     </div>
   );
 }
