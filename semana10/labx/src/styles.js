@@ -13,6 +13,7 @@ export const Header = styled.header`
   color: white;
 
   box-shadow: 10px 0px 15px grey;
+  z-index: 1;
 `;
 
 export const HeaderFirstButton = styled.button`
@@ -118,6 +119,7 @@ export const LoginContainer = styled.div`
 
   border: 2px solid #ee524c;
   border-radius: 32px;
+  box-shadow: 10px 0px 15px #e3e3e3;
 `;
 
 export const LoginForm = styled.form`
@@ -193,12 +195,12 @@ export const FormDiv = styled.div`
   top: 11%;
 `;
 
-export const PlanetSelect = styled.select`
+export const Select = styled.select`
   display: block;
   width: 20vw;
   height: 5vh;
 
-  margin: 10px 0px 30px 0px;
+  margin: 10px 0px 10px 0px;
 
   border: 2px solid #e3e3e3;
   border-radius: 16px;
@@ -211,4 +213,36 @@ export const DescriptionInput = styled(CreateTripInput)`
 export const CreateTripButton = styled(LoginButton)`
   margin: 0px auto;
   height: 5vh;
+`;
+
+// ApplicationForm Page
+
+export const ApplicationTrips = styled(TripsList)`
+  flex-direction: column;
+  flex-wrap: nowrap;
+`;
+
+export const ApplicationTripBox = styled(TripBox)`
+  width: 45%;
+`;
+
+export const ApplicationFormContainer = styled(LoginContainer)`
+  position: fixed;
+
+  justify-content: space-between;
+
+  top: 25%;
+  left: 60%;
+  height: 70%;
+`;
+
+export const ApplicationForm = styled(CreateTripForm)`
+  margin: 25px 0px;
+`;
+
+export const ApplicationFormInput = styled(LoginInput)`
+  display: block;
+  margin: 5px 0px;
+  width: 100%;
+  height: 7%;
 `;

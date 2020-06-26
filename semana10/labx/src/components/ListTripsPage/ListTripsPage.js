@@ -44,6 +44,11 @@ function ListTripsPage() {
     history.push("/trips/details");
   };
 
+  const logout = () => {
+    window.localStorage.clear();
+    history.push("/");
+  };
+
   return (
     <div>
       <Header>
@@ -53,7 +58,7 @@ function ListTripsPage() {
         <HeaderSecondButton onClick={goToTripDetailsPage}>
           Ver detalhes
         </HeaderSecondButton>
-        <Logout>Logout</Logout>
+        <Logout onClick={logout}>Logout</Logout>
       </Header>
       <Title>Lista de Viagens</Title>
 
