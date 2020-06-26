@@ -103,7 +103,7 @@ function ApplicationPage() {
               required
               name="name"
               value={form.name}
-              pattern="[A-Za-z ]{5,}"
+              pattern="[A-Za-z ]{3,}"
               onChange={handleInputChange}
               type="text"
               id="name"
@@ -113,6 +113,7 @@ function ApplicationPage() {
             <ApplicationFormInput
               required
               name="age"
+              min="18"
               value={form.age}
               onChange={handleInputChange}
               type="number"
@@ -126,6 +127,7 @@ function ApplicationPage() {
               required
               name="applicationText"
               value={form.applicationText}
+              pattern="[A-Za-z ]{30,}"
               onChange={handleInputChange}
               type="text"
               id="applicationText"
@@ -136,7 +138,7 @@ function ApplicationPage() {
               required
               name="profession"
               value={form.profession}
-              pattern="[A-Za-z ]{5,}"
+              pattern="[A-Za-z ]{10,}"
               onChange={handleInputChange}
               type="text"
               id="profession"
