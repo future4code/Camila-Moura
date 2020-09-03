@@ -29,7 +29,7 @@ describe("Testing getAllUsers", () => {
   });
 
   test("Should return all users information", async () => {
-    const getAllUsers = jest.fn(async (id: string) => [
+    const getAllUsers = jest.fn(async () => [
       new User(
         "id",
         "WALL-E",
@@ -49,17 +49,13 @@ describe("Testing getAllUsers", () => {
     );
 
     const user = await userBusiness.getAllUsers(UserRole.ADMIN);
-
-    expect(getAllUsers).toHaveBeenCalledWith(UserRole.ADMIN);
     expect(getAllUsers).toHaveBeenCalledTimes(1);
 
-    expect(user).toContainEqual([
-      {
-        id: "id",
-        name: "WALL-E",
-        email: "wall@pixar.com",
-        role: UserRole.ADMIN,
-      },
-    ]);
+    expect(user).toContainEqual({
+      id: "id",
+      name: "WALL-E",
+      email: "wall@pixar.com",
+      role: UserRole.ADMIN,
+    });
   });
 });

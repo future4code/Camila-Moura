@@ -8,11 +8,13 @@ describe("Testing getUserProfile", () => {
   let tokenGenerator = {};
 
   test("Should return User not found", async () => {
-    expect.assertions(1);
-
+    expect.assertions(2);
     try {
-      const getUserProfile = jest.fn();
-      userDatabase = { getUserProfile };
+      const getUserById = jest.fn(() => {
+        return undefined;
+      });
+
+      userDatabase = { getUserById };
 
       const userBusiness = new UserBusiness(
         userDatabase as any,
@@ -23,14 +25,14 @@ describe("Testing getUserProfile", () => {
 
       await userBusiness.getUserProfile("");
     } catch (error) {
-      //expect(error.errorCode).toBe(404);
+      expect(error.errorCode).toBe(404);
       expect(error.message).toEqual("User not found");
     }
   });
 
   test("Should return user information", async () => {
-    const getUserProfile = jest.fn(
-      (id: string) =>
+    const getUserById = jest.fn(
+      () =>
         new User(
           "id",
           "WALL-E",
@@ -40,7 +42,7 @@ describe("Testing getUserProfile", () => {
         )
     );
 
-    userDatabase = { getUserProfile };
+    userDatabase = { getUserById };
 
     const userBusiness = new UserBusiness(
       userDatabase as any,
@@ -51,7 +53,7 @@ describe("Testing getUserProfile", () => {
 
     const user = await userBusiness.getUserProfile("id");
 
-    expect(getUserProfile).toHaveBeenCalledWith("id");
+    expect(getUserById).toHaveBeenCalledWith("id");
     expect(user).toEqual({
       id: "id",
       name: "WALL-E",
