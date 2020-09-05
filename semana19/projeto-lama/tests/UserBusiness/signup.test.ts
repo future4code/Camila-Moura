@@ -42,14 +42,14 @@ describe("Testando o signup na camada UserBusiness", () => {
     }
   });
 
-  /*   test("Deve retornar erro ao receber um email vazio", async () => {
+  test("Deve retornar erro ao receber um email vazio", async () => {
     expect.assertions(2);
 
     const userBusiness = new UserBusiness(
       userDatabase as any,
       idGenerator as any,
-      hashGenerator as any,
-      tokenGenerator as any
+      hashManager as any,
+      authenticator as any
     );
 
     try {
@@ -62,19 +62,19 @@ describe("Testando o signup na camada UserBusiness", () => {
 
       await userBusiness.signup(userInput);
     } catch (error) {
-      expect(error.errorCode).toBe(422);
+      expect(error.code).toBe(422);
       expect(error.message).toEqual("Missing input");
     }
-  }); */
+  });
 
-  /*   test("Deve retornar erro ao receber uma senha vazia", async () => {
+  test("Deve retornar erro ao receber uma senha vazia", async () => {
     expect.assertions(2);
 
     const userBusiness = new UserBusiness(
       userDatabase as any,
       idGenerator as any,
-      hashGenerator as any,
-      tokenGenerator as any
+      hashManager as any,
+      authenticator as any
     );
 
     try {
@@ -87,19 +87,19 @@ describe("Testando o signup na camada UserBusiness", () => {
 
       await userBusiness.signup(userInput);
     } catch (error) {
-      expect(error.errorCode).toBe(422);
+      expect(error.code).toBe(422);
       expect(error.message).toEqual("Missing input");
     }
-  }); */
+  });
 
-  /*   test("Deve retornar erro ao receber um role vazio", async () => {
+  test("Deve retornar erro ao receber um role vazio", async () => {
     expect.assertions(2);
 
     const userBusiness = new UserBusiness(
       userDatabase as any,
       idGenerator as any,
-      hashGenerator as any,
-      tokenGenerator as any
+      hashManager as any,
+      authenticator as any
     );
 
     try {
@@ -112,19 +112,19 @@ describe("Testando o signup na camada UserBusiness", () => {
 
       await userBusiness.signup(userInput);
     } catch (error) {
-      expect(error.errorCode).toBe(422);
+      expect(error.code).toBe(422);
       expect(error.message).toEqual("Missing input");
     }
-  }); */
+  });
 
-  /*   test("Deve retornar erro 'Invalid email' para um email sem @", async () => {
+  test("Deve retornar erro 'Invalid email' para um email sem @", async () => {
     expect.assertions(2);
 
     const userBusiness = new UserBusiness(
       userDatabase as any,
       idGenerator as any,
-      hashGenerator as any,
-      tokenGenerator as any
+      hashManager as any,
+      authenticator as any
     );
 
     try {
@@ -136,19 +136,19 @@ describe("Testando o signup na camada UserBusiness", () => {
       };
       await userBusiness.signup(userInput);
     } catch (error) {
-      expect(error.errorCode).toBe(422);
+      expect(error.code).toBe(422);
       expect(error.message).toEqual("Invalid email");
     }
-  }); */
+  });
 
-  /*   test("Deve retornar erro 'Invalid password' para uma senha com menos de 6 caracteres", async () => {
+  test("Deve retornar erro 'Invalid password' para uma senha com menos de 6 caracteres", async () => {
     expect.assertions(2);
 
     const userBusiness = new UserBusiness(
       userDatabase as any,
       idGenerator as any,
-      hashGenerator as any,
-      tokenGenerator as any
+      hashManager as any,
+      authenticator as any
     );
 
     try {
@@ -161,19 +161,19 @@ describe("Testando o signup na camada UserBusiness", () => {
 
       await userBusiness.signup(userInput);
     } catch (error) {
-      expect(error.errorCode).toBe(422);
+      expect(error.code).toBe(422);
       expect(error.message).toEqual("Invalid password");
     }
-  }); */
+  });
 
-  /*   test("Deve retornar 'Invalid user role em caso de role que não seja NORMAL ou ADMIN'", async () => {
+  test("Deve retornar 'Invalid user role em caso de role que não seja NORMAL ou ADMIN'", async () => {
     expect.assertions(2);
 
     const userBusiness = new UserBusiness(
       userDatabase as any,
       idGenerator as any,
-      hashGenerator as any,
-      tokenGenerator as any
+      hashManager as any,
+      authenticator as any
     );
     try {
       const userInput: UserInputDTO = {
@@ -185,18 +185,18 @@ describe("Testando o signup na camada UserBusiness", () => {
 
       await userBusiness.signup(userInput);
     } catch (err) {
-      expect(err.errorCode).toBe(422);
+      expect(err.code).toBe(422);
       expect(err.message).toBe("Invalid user role");
     }
-  }); */
+  });
 
-  /* test("Deve retornar token de acesso após criação de usuário", async () => {
+  test("Deve retornar token de acesso após criação de usuário", async () => {
     expect.assertions(3);
     const userBusiness = new UserBusiness(
       userDatabase as any,
       idGenerator as any,
-      hashGenerator as any,
-      tokenGenerator as any
+      hashManager as any,
+      authenticator as any
     );
 
     try {
@@ -209,7 +209,7 @@ describe("Testando o signup na camada UserBusiness", () => {
 
       await userBusiness.signup(userInput);
 
-      expect(hashGenerator.hash).toBeCalled();
+      expect(hashManager.hash).toBeCalled();
       expect(userDatabase.createUser).toBeCalledWith(
         new User(
           "id",
@@ -219,7 +219,7 @@ describe("Testando o signup na camada UserBusiness", () => {
           stringToUserRole("ADMIN")
         )
       );
-      expect(tokenGenerator.generate).toHaveReturnedWith("token");
+      expect(authenticator.generateToken).toHaveReturnedWith("token");
     } catch (err) {}
-  }); */
+  });
 });

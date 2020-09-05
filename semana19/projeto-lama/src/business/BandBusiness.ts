@@ -1,10 +1,8 @@
 import { BandDTO, Band } from "../model/Band";
 import { BandDatabase } from "../data/BandDatabase";
 import { IdGenerator } from "../services/IdGenerator";
-import { HashManager } from "../services/HashManager";
 import { Authenticator } from "../services/Authenticator";
 import { InvalidParameterError } from "../error/InvalidParameterError";
-import { NotFoundError } from "../error/NotFoundError";
 import { DuplicateEntryError } from "../error/DuplicateEntryError";
 
 export class BandBusiness {
@@ -36,5 +34,15 @@ export class BandBusiness {
     });
 
     return accessToken;
+  }
+
+  async getBandByName(bandName: string) {
+    if (!bandName) {
+      throw new InvalidParameterError("Missing input");
+    }
+
+    const findBand = await this.bandDatabase.getBandByName(bandName);
+
+    return findBand;
   }
 }

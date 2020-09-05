@@ -1,6 +1,7 @@
 import { Request, Response, request } from "express";
 import { BandDTO, Band } from "../model/Band";
 import { BandBusiness } from "../business/BandBusiness";
+import { ShowBusiness } from "../business/ShowBusiness";
 import { BaseDatabase } from "../data/BaseDatabase";
 import { UserDatabase } from "../data/UserDatabase";
 import { BandDatabase } from "../data/BandDatabase";
@@ -8,15 +9,17 @@ import { IdGenerator } from "../services/IdGenerator";
 import { HashManager } from "../services/HashManager";
 import { Authenticator } from "../services/Authenticator";
 import { NotFoundError } from "../error/NotFoundError";
+import { ShowDatabase } from "../data/ShowDatabase";
+import { Show } from "../model/Show";
 
-export class BandController {
-  private static BandBusiness = new BandBusiness(
-    new BandDatabase(),
+export class ShowController {
+  private static ShowBusiness = new ShowBusiness(
+    new ShowDatabase(),
     new IdGenerator(),
     new Authenticator()
   );
 
-  public async registerBand(req: Request, res: Response) {
+  public async registerShow(req: Request, res: Response) {
     try {
       const token = req.headers.authorization as string;
 
@@ -27,24 +30,31 @@ export class BandController {
         throw new Error("Only a admin user can access this funcionality");
       }
 
-      const userInput: BandDTO = {
-        name: req.body.name,
-        musicGenre: req.body.musicGenre,
-        responsible: req.body.resposible,
-      };
+      const id = new IdGenerator();
+      const showId: string = id.generate();
 
-      const result = await BandController.BandBusiness.registerBand(userInput);
+      const userInput = new Show(
+        showId,
+        req.body.weekDay,
+        req.body.startTime,
+        req.body.endTime,
+        req.params.id
+      );
+
+      const result = await ShowController.ShowBusiness.registerShow(userInput);
       res.status(200).send(result);
     } catch (error) {
       res.status(error.errorCode || 400).send({ message: error.message });
     }
   }
 
-  public async getBandByName(req: Request, res: Response) {
+  public async getShowByDay(req: Request, res: Response) {
     try {
-      const userInput: string = req.params.name;
+      const userInput: string = req.body.weekDay;
 
-      const result = await BandController.BandBusiness.getBandByName(userInput);
+      const result = await ShowController.ShowBusiness.getShowByWeekDay(
+        userInput
+      );
 
       if (!result) {
         throw new NotFoundError("User not found");

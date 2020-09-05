@@ -1,6 +1,3 @@
-import { InvalidParameterError } from "../error/InvalidParameterError";
-import { request } from "express";
-
 export class Band {
   constructor(
     private id: string,

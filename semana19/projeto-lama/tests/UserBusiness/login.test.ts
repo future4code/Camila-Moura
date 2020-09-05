@@ -1,13 +1,13 @@
-/* import { UserBusiness } from "../../src/business/UserBusiness";
+import { UserBusiness } from "../../src/business/UserBusiness";
 import { User, UserRole, LoginInputDTO } from "../../src/model/User";
 
 describe("Testando o login na camada de Business", () => {
   let userDatabase = {};
-  let hashGenerator = {};
+  let hashManager = {};
   let idGenerator = {};
 
-  let tokenGenerator = {
-    generate: jest.fn(() => "token"),
+  let authenticator = {
+    generateToken: jest.fn(() => "token"),
   };
 
   test("Deve retornar erro quando o e-mail está vazio", async () => {
@@ -17,8 +17,8 @@ describe("Testando o login na camada de Business", () => {
       const userBusiness = new UserBusiness(
         userDatabase as any,
         idGenerator as any,
-        hashGenerator as any,
-        tokenGenerator as any
+        hashManager as any,
+        authenticator as any
       );
 
       const userInput: LoginInputDTO = {
@@ -28,7 +28,7 @@ describe("Testando o login na camada de Business", () => {
 
       await userBusiness.login(userInput);
     } catch (error) {
-      expect(error.errorCode).toBe(422);
+      expect(error.code).toBe(422);
       expect(error.message).toEqual("Missing input");
     }
   });
@@ -40,8 +40,8 @@ describe("Testando o login na camada de Business", () => {
       const userBusiness = new UserBusiness(
         userDatabase as any,
         idGenerator as any,
-        hashGenerator as any,
-        tokenGenerator as any
+        hashManager as any,
+        authenticator as any
       );
 
       const userInput: LoginInputDTO = {
@@ -51,7 +51,7 @@ describe("Testando o login na camada de Business", () => {
 
       await userBusiness.login(userInput);
     } catch (error) {
-      expect(error.errorCode).toBe(422);
+      expect(error.code).toBe(422);
       expect(error.message).toEqual("Missing input");
     }
   });
@@ -67,8 +67,8 @@ describe("Testando o login na camada de Business", () => {
       const userBusiness = new UserBusiness(
         userDatabase as any,
         idGenerator as any,
-        hashGenerator as any,
-        tokenGenerator as any
+        hashManager as any,
+        authenticator as any
       );
 
       const userInput: LoginInputDTO = {
@@ -78,7 +78,7 @@ describe("Testando o login na camada de Business", () => {
 
       await userBusiness.login(userInput);
     } catch (error) {
-      expect(error.errorCode).toBe(404);
+      expect(error.code).toBe(404);
       expect(error.message).toEqual("User not found");
       expect(getUserByEmail).toHaveBeenCalledWith("notFound@gmail.com");
     }
@@ -102,12 +102,12 @@ describe("Testando o login na camada de Business", () => {
 
     try {
       userDatabase = { getUserByEmail };
-      hashGenerator = { compareHash };
+      hashManager = { compareHash };
       const userBusiness = new UserBusiness(
         userDatabase as any,
         idGenerator as any,
-        hashGenerator as any,
-        tokenGenerator as any
+        hashManager as any,
+        authenticator as any
       );
 
       const userInput: LoginInputDTO = {
@@ -117,7 +117,7 @@ describe("Testando o login na camada de Business", () => {
 
       await userBusiness.login(userInput);
     } catch (error) {
-      expect(error.errorCode).toBe(422);
+      expect(error.code).toBe(422);
       expect(error.message).toEqual("Invalid password");
       expect(getUserByEmail).toHaveBeenCalledWith("astrodev@gmail.com");
       expect(compareHash).toHaveBeenCalledWith("maxixezinho", "bananinha");
@@ -136,16 +136,16 @@ describe("Testando o login na camada de Business", () => {
       );
     });
 
-    let compareHash = jest.fn((password: string, userPassword: string) => true);
+    let compare = jest.fn((password: string, userPassword: string) => true);
 
     try {
       userDatabase = { getUserByEmail };
-      hashGenerator = { compareHash };
+      hashManager = { compare };
       const userBusiness = new UserBusiness(
         userDatabase as any,
         idGenerator as any,
-        hashGenerator as any,
-        tokenGenerator as any
+        hashManager as any,
+        authenticator as any
       );
 
       const userInput: LoginInputDTO = {
@@ -156,9 +156,8 @@ describe("Testando o login na camada de Business", () => {
       await userBusiness.login(userInput);
 
       expect(getUserByEmail).toHaveBeenCalledWith("astrodev@gmail.com");
-      expect(compareHash).toHaveBeenCalledWith("maxixezinho", "bananinha");
-      expect(tokenGenerator.generate).toHaveReturnedWith("token");
+      expect(compare).toHaveBeenCalledWith("maxixezinho", "bananinha");
+      expect(authenticator.generateToken).toHaveReturnedWith("token");
     } catch (error) {}
   });
 });
- */
